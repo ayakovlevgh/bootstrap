@@ -134,7 +134,7 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
   // console.log(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours());
   // can result in "2013 11 31 23" because of the bug.
   this.fixTimeZone = function(date) {
-    date.setHours(date.getHours() > 12 ? date.getHours() + 2 : 0);
+    date.setHours(date.getHours() === 23 ? date.getHours() + 2 : 0);
   };
 
   $scope.select = function( date ) {
